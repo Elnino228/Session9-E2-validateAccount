@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isAccount(str) {
+        let regexp=/^[a-z]+[a-z0-9_]{4,}[a-z0-9]$/;
+        if (regexp.test(str)) {
+            console.log(true);
+        }else console.log(false);
+    }
+    isAccount('abcdef');//hợp lệ
+    isAccount('abcdef123');//hợp lệ
+    isAccount('abcdef_123');//hợp lệ
+    isAccount('abcdef_');//ko hợp lệ
+    isAccount('abcde');//ko hợp lệ
+    isAccount('123abcdef');//ko hợp lệ
+    isAccount('abcdef_');//ko hợp lệ
+    isAccount('_abcdef');//ko hợp lệ
+    isAccount('______');//ko hợp lệ
+    isAccount('123456');//ko hợp lệ
+</script>
+</body>
+</html>
